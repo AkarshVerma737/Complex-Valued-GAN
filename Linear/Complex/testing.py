@@ -46,6 +46,6 @@ if __name__ == "__main__":
         #device = "cpu"
         generator = Generator(latent_dim).to(device)
         #generator.load_state_dict(torch.load('generatori.pth', map_location=torch.device('cpu')))
-        generator.load_state_dict(torch.load('generator 20.pth'))
+        generator.load_state_dict(torch.load('generator.pth'))
         generate_images(generator, latent_dim, a, b)
         st = (input("Generate Random Handwritten Numbers? Y/N: "))
