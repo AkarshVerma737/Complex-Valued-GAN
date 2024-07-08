@@ -1,0 +1,3 @@
+At end of Epoch 200
+Discriminator Loss	:	1.0774927139282227
+Generator Loss		:	1.3871601819992065
