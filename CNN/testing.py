@@ -59,6 +59,6 @@ if __name__ == "__main__":
 
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     generator = Generator(latent_dim, num_classes,ngf,nc).to(device)
-    generator.load_state_dict(torch.load('generator1.pth', map_location=device))
+    generator.load_state_dict(torch.load('generator_1.pth', map_location=device))
 
     generate_images(generator, latent_dim, num_classes, a, b)
