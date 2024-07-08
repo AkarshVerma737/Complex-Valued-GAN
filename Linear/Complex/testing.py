@@ -8,13 +8,11 @@ class Generator(nn.Module):
     def __init__(self, latent_dim):
         super(Generator, self).__init__()
         self.model = nn.Sequential(
-            nn.Linear(latent_dim, 261, dtype = torch.complex64),
+            nn.Linear(latent_dim, 256, dtype = torch.complex64),
             an.Switch(),
-            nn.Linear(261, 522, dtype = torch.complex64),
+            nn.Linear(256, 512, dtype = torch.complex64),
             an.Switch(),
-            nn.Linear(522, 784,dtype = torch.complex64),
-            an.Switch(),
-            nn.Linear(784, 784,dtype = torch.complex64),
+            nn.Linear(512, 784,dtype = torch.complex64),
             an.CTanhR()
         )
     def forward(self, z):
@@ -38,7 +36,7 @@ def generate_images(generator, latent_dim, a, b):
 
 
 if __name__ == "__main__":
-    latent_dim = 87
+    latent_dim = 100
     st = 'Y'
     while (st == 'Y'):
         a = int(input("Enter dimensions\nEnter the number of rows (a): "))
